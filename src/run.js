@@ -9,9 +9,9 @@ exports.run = () => {
     return;
   }
 
-  const pullRequestTitle = github.context.payload.pull_request.body;
+  const pullRequestBody = github.context.payload.pull_request.body;
 
-  core.info(`Pull Request title: "${pullRequestTitle}"`);
+  core.info(`Pull Request title: "${pullRequestBody}"`);
 
   const regex = RegExp(core.getInput('regexp'));
   if (!regex.test(pullRequestTitle)) {
