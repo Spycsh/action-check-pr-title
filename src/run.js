@@ -11,10 +11,19 @@ exports.run = () => {
   }
 
   const pullRequestBody = github.context.payload.pull_request.body;
+  const changes = github.context.payload.pull_request.changes;
+  const pull_request = github.context.payload.pull_request.pull_request;
+  const repository = github.context.payload.pull_request.repository;
+  const sender = github.context.payload.pull_request.sender;
+  
 
   core.info(`Pull Request Comment Body: "${pullRequestBody}"`);
   
-  console.log(pullRequestBody);
+  core.info(`Pull Request changes: "${changes}"`);
+  
+  core.info(`Pull Request pull_request: "${pull_request}"`);
+  core.info(`Pull Request repository: "${repository}"`);
+  core.info(`Pull Request sender: "${sender}"`);
 
 //   const regex = RegExp(core.getInput('regexp'));
 //   if (!regex.test(pullRequestTitle)) {
