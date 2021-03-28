@@ -16,6 +16,8 @@ exports.run = () => {
   const repository = github.context.payload.pull_request.repository;
   const sender = github.context.payload.pull_request.sender;
   
+  const payload = github.context.payload;
+  
 
   core.info(`Pull Request Comment Body: "${pullRequestBody}"`);
   
@@ -24,6 +26,8 @@ exports.run = () => {
   core.info(`Pull Request pull_request: "${pull_request}"`);
   core.info(`Pull Request repository: "${repository}"`);
   core.info(`Pull Request sender: "${sender}"`);
+  
+  console.log(payload);
 
 //   const regex = RegExp(core.getInput('regexp'));
 //   if (!regex.test(pullRequestTitle)) {
