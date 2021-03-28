@@ -9,7 +9,7 @@ exports.run = () => {
     return;
   }
 
-  const pullRequestTitle = github.context.payload.pull_request.title;
+  const pullRequestTitle = github.context.payload.pull_request.body;
 
   core.info(`Pull Request title: "${pullRequestTitle}"`);
 
