@@ -13,9 +13,11 @@ exports.run = () => {
   const pullRequestBody = github.context.payload.pull_request.body;
 
   core.info(`Pull Request title: "${pullRequestBody}"`);
+  
+  console.log(pullRequestBody);
 
-  const regex = RegExp(core.getInput('regexp'));
-  if (!regex.test(pullRequestTitle)) {
-    core.setFailed(`Pull Request title "${pullRequestTitle}" failed to pass match regex - ${regex}`);
-  }
+//   const regex = RegExp(core.getInput('regexp'));
+//   if (!regex.test(pullRequestTitle)) {
+//     core.setFailed(`Pull Request title "${pullRequestTitle}" failed to pass match regex - ${regex}`);
+//   }
 };
