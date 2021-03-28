@@ -12,7 +12,7 @@ exports.run = () => {
 
   const pullRequestBody = github.context.payload.pull_request.body;
 
-  core.info(`Pull Request title: "${pullRequestBody}"`);
+  core.info(`Pull Request Comment Body: "${pullRequestBody}"`);
   
   console.log(pullRequestBody);
 
