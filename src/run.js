@@ -10,23 +10,13 @@ exports.run = () => {
     return;
   }
 
-  const pullRequestBody = github.context.payload.pull_request.body;
-  const changes = github.context.payload.pull_request.changes;
-  const pull_request = github.context.payload.pull_request.pull_request;
-  const repository = github.context.payload.pull_request.repository;
-  const sender = github.context.payload.pull_request.sender;
-  
-  const payload = github.context.payload;
-  
+  const payload = github.context.payload; // get the comment body
+  const pullRequestBody = github.context.payload.pull_request.body; // get the comment body
+  const diffUrl = github.context.payload.pull_request.diff_url;   // get the difference 
 
   core.info(`Pull Request Comment Body: "${pullRequestBody}"`);
-  
-  core.info(`Pull Request changes: "${changes}"`);
-  
-  core.info(`Pull Request pull_request: "${pull_request}"`);
-  core.info(`Pull Request repository: "${repository}"`);
-  core.info(`Pull Request sender: "${sender}"`);
-  
+  core.info(`Pull Request changes: "${diffUrl}"`);
+  console.log("payload Json:");
   console.log(payload);
 
 //   const regex = RegExp(core.getInput('regexp'));
